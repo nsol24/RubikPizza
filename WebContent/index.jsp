@@ -1,27 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<link rel="stylesheet" href="css\style.css">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Rubiks Pizza</title>
 </head>
 <body>
-	<table   >
-      <thead>
-        <tr>
-          <th>Date receive</th>
-          <th>Parcel Id</th>
-          <th>Student Name</th>
-          <th>Email</th>
-          <th>Courier Type</th>
-          <th>Parcel Status</th>
-          
-          <th>Option</th>
-          
-        </tr>
-        
-        hellloooooooooooooooooooooooooooooo
-      </thead>
-    </table>
+	<!-- Nav bar -->
+	<div class="logo">
+		<a href="#"><img src="img/logo.png"></a>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="addcust.html">REGISTER</a></li>
+			<li><a href="custview.jsp">VIEW LIST</a></li>
+			<li><a href="#">Home</a></li>
+		</ul>
+	</nav>
 </body>
 </html>

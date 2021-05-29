@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+
+<meta charset="ISO-8859-1">
+<title>ADD CUSTOMER</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Rubiks Pizza">
+    <title>ADD NEW CUSTOMER</title>
+
+  <body>
+  
+      <div>
+        <br><br>
+        	<div class="container">
+					<form id="signup" method="POST" action="addcustcontroller.jsp">
+                    <h2>Please fill in the details below</h2>
+                        <label class="name">Name</label><br>
+                        <input placeholder="Name" class="name" type="text" name="cust_name" required><br><br>
+                        
+                        <label class="address">Address:</label><br>
+                        <textarea class="address" id="address" name="cust_address" rows="5" cols="30" required></textarea><br><br>
+
+                        <label class="phone-number">Phone Number</label><br>
+                        <input placeholder="Enter phone number (e.g 0123456789)" class="phone" type="text" name="cust_phone" required><br><br>
+
+                        <label class="email">Email</label><br>
+                        <input placeholder="Enter a valid email address" class="email" type="text" name="cust_email" required><br><br>
+
+                        <label class="item-price">Password:</label><br>
+                        <input placeholder="Enter password" class="password" type="password" name="cust_password" required><br><br>
+
+                        <input type="submit" class="submit-btn" value="REGISTER">
+                    </form>
+             </div>
+  </body>
+</html>
