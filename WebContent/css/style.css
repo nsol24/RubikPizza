@@ -1,8 +1,24 @@
 @charset "ISO-8859-1";
 
+@import
+	url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Roboto:wght@700&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
 	padding: 0px;
 	margin: 0px;
+	font-family: montserrat;
 }
 
 nav {
@@ -12,7 +28,7 @@ nav {
 }
 
 ul {
-	padding-top: 0px;
+	padding-top: 20px;
 	padding-right: 70px;
 	margin: 0 0 0 150px;
 	list-style: none;
@@ -26,8 +42,8 @@ li {
 	position: absolute;
 	margin-top: 10px;
 	margin-left: 80px;
-	width: 70px;
-	height: 77px;
+	width: 393px;
+	height: 70px;
 }
 
 nav a {
@@ -41,6 +57,197 @@ nav a {
 }
 
 nav a:hover {
-	background: greenyellow;
+	background: #ea690e;
 	transition: 0.5s;
+}
+
+.image-container {
+	background-image: ("img\banner.jpg");
+	height: 40%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+form {
+	padding: 25px 25px 25px 100px;
+}
+
+.id-txt, .name-txt, .address-txt, .phone-txt, .email-txt, .password-txt {
+	font-weight: bold;
+}
+
+.id {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.name {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.address {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.phone {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.email {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.password {
+	width: 550px;
+	left: 100px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.submit-btn {
+	background-color: white;
+	color: black;
+	border: 2.5px solid #000000;
+	padding: 12px 32px;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: inherit;
+}
+
+.submit-btn:hover {
+	background-color: black;
+	color: white;
+	transition: background-color 0.1s ease-in, color 0.1s ease-in;
+	cursor: pointer;
+}
+
+.list-customer {
+	position: absolute;
+	padding-top: 50px;
+	padding-left: 280px;
+}
+
+.list-customer-table {
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 115%;
+	width: auto;
+	overflow: auto;
+	display: block;
+}
+
+.list-customer-table th {
+	background-color: #F18A4E;
+	font-weight: bold;
+	color: white;
+	padding: 20px 30px;
+	text-align: center;
+}
+
+.list-customer-table td {
+	background-color: rgb(238, 238, 238);
+	padding: 20px 30px;
+	color: rgb(111, 111, 111);
+}
+
+.update, .delete{
+	background-color: white;
+	color: black;
+	border: 2.5px solid #000000;
+	padding: 5px 10px;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.update:hover{
+	background-color: #3e8e41;
+  	color: white;
+}
+
+.delete:hover{
+	background-color: #F93332;
+  	color: white;
+}
+
+.update-customer-form{
+	margin-top:38px;
+}
+
+.success{
+	margin: 50px;
+}
+
+.success h1{
+	text-align: center;
+	margin: 30px;
+}
+
+.success p{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.img-success{
+	height: 200px;
+	width:200px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+	background: #333333;
+	height: 130px;
+}
+
+.footer p {
+	text-align: center;
+	margin: auto;
+	color: white;
+	padding-top: 60px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+	margin-bottom: 50px;
 }
