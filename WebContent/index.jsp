@@ -14,9 +14,11 @@
 	</div>
 	<nav>
 		<ul>
-			<li><a href="addcust.html">REGISTER</a></li>
+		
+			<li><a href="customer/login.jsp">LOGIN</a></li>
 			<li><a href="custview.jsp">VIEW LIST</a></li>
 			<li><a href="index.jsp">HOME</a></li>
+			<li><a href="#">ABOUT US</a></li>
 		</ul>
 	</nav>
 	
