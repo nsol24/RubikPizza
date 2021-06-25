@@ -1,0 +1,4 @@
+Model\Customer.class
+Connection\ConnectionManager.class
+Controller\RegisterController.class
+Dao\customerDAO.class

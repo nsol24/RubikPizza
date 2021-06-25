@@ -1,6 +1,4 @@
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\dao\CategoryDAO.java
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\db\connection\ConnectionManager.java
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\servlet\addmenuServlet.java
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\dao\MenuDAO.java
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\model\Category.java
-C:\Users\CUSTOM PC\CSC\RubikPizza\src\model\Menu.java
+C:\Users\CUSTOM PC\CSC\RubikPizza\src\Controller\RegisterController.java
+C:\Users\CUSTOM PC\CSC\RubikPizza\src\Model\Customer.java
+C:\Users\CUSTOM PC\CSC\RubikPizza\src\Dao\customerDAO.java
+C:\Users\CUSTOM PC\CSC\RubikPizza\src\Connection\ConnectionManager.java
