@@ -19,6 +19,8 @@
 	padding: 0px;
 	margin: 0px;
 	font-family: montserrat;
+	background: #ffe6cc;
+	background-color:  #ffe6cc;
 }
 
 nav {
@@ -248,6 +250,6 @@ form {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-	margin-bottom: 50px;
-}
+
+
+

@@ -16,7 +16,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
 
 <link rel="stylesheet" href="admin.css">
-<link rel="stylesheet" href="../css/style.css">
+
   <title>Document</title>
   
   
@@ -26,6 +26,12 @@
     <img src="logo2.png" style="width: 160px; margin: 20px 0px 0px 15px;" alt="">
     <div>Rubik Pizza</div>
     
+    <span>Dashboard</span><br><br>
+    <span>Menu</span><br><br>
+    <span>Sales</span><br><br>
+    <span>Rider</span><br><br>
+    <span>Admin</span><br><br>
+    <span>Logout</span><br><br>
   </div>
   <div class="main">
     <div class="header"><h1>Menu Management</h1></div>

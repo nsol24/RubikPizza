@@ -93,6 +93,7 @@ public class customerDAO {
 				 cust.setAddress(rs.getString("cust_address"));
 				 cust.setPhone(rs.getString("cust_phone"));
 				 cust.setPassword(rs.getString("cust_password"));
+				 
 			 }
 			 
 		 }
