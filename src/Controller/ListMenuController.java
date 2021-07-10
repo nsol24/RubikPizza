@@ -28,7 +28,7 @@ public class ListMenuController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setAttribute("menu", menuDAO.getAllMenu());        
-		RequestDispatcher view = request.getRequestDispatcher("pizza.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("orderPage.jsp");
         view.forward(request, response);
 		
 		

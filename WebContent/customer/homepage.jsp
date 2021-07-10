@@ -38,7 +38,7 @@
         <div class="container">
             <h2 class="text-center">Foods</h2>
 
-            <a href="pizzaPage.jsp">
+            <a href="ListMenuController?= />">
             <div class="box-3 float-container">
                 <img src="../images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
 

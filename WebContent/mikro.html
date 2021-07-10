@@ -15,7 +15,7 @@
 
       if (request.status >= 200 && request.status < 400) {
         for (var i = 0; i < db_json_value.length; i++) {
-        	document.getElementById().innerHtml=db_json_value[i].cust_id + ": " + db_json_value[i].name + ": " + db_json_value[i].email
+        	document.getElementById("demo").innerHtml=db_json_value[i].cust_id + ": " + db_json_value[i].cust_name + ": " + db_json_value[i].cust_email
           alert(db_json_value[i].id + ": " + db_json_value[i].name + ": " + db_json_value[i].email);
         }
         console.log("Request Success!");
@@ -27,9 +27,9 @@
     request.send();
   </script>
 </head>
-	test
+	
 <body>
-
+	<h1 id="demo"> test</h1>
 </body>
 
 </html>

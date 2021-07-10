@@ -6,12 +6,12 @@ public class Menu {
 	private Double price;
 	private String desc;
 	private String image;
-	private String category;
+	private int category;
 	
 	public Menu() {
 		
 	}
-	public Menu(int id, String name, Double price, String desc, String image, String category) {
+	public Menu(int id, String name, Double price, String desc, String image, int category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -35,7 +35,7 @@ public class Menu {
 	public String getImage() {
 		return image;
 	}
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
 	public void setId(int id) {
@@ -53,7 +53,7 @@ public class Menu {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 	@Override
