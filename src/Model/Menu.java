@@ -1,17 +1,20 @@
 package Model;
 
+import java.sql.Blob;
+
 public class Menu {
-	private int id;
+	private String id;
 	private String name;
 	private Double price;
 	private String desc;
-	private String image;
-	private int category;
+	private Blob image;
+	private String category;
+	private Category cat;
 	
 	public Menu() {
 		
 	}
-	public Menu(int id, String name, Double price, String desc, String image, int category) {
+	public Menu(String id, String name, Double price, String desc, Blob image, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,7 +23,15 @@ public class Menu {
 		this.image = image;
 		this.category = category;
 	}
-	public int getId() {
+	
+	
+	public Category getCat() {
+		return cat;
+	}
+	public void setCat(Category cat) {
+		this.cat = cat;
+	}
+	public String getId() {
 		return id;
 	}
 	public String getName() {
@@ -32,13 +43,13 @@ public class Menu {
 	public String getDesc() {
 		return desc;
 	}
-	public String getImage() {
+	public Blob getImage() {
 		return image;
 	}
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public void setName(String name) {
@@ -50,10 +61,10 @@ public class Menu {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public void setImage(String image) {
+	public void setImage(Blob image) {
 		this.image = image;
 	}
-	public void setCategory(int category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 	@Override

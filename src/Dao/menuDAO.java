@@ -4,6 +4,8 @@ import java.util.*;
 
 import Connection.ConnectionManager;
 
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,8 +24,11 @@ public class menuDAO {
 	private String query;
     private PreparedStatement pst;
     private ResultSet rs;
-	int id;
-	String name, price,desc,image,category;
+	String id;
+	String name, desc,category;
+	Double price;
+	Blob image;
+	InputStream file;
 	
 	
 	//get all menu and display at page
@@ -33,17 +38,15 @@ public class menuDAO {
 		try {
 			con = ConnectionManager.getConnection();
 			stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select menu_id, menu_name, menu_price,menu_desc,menu_image from menu");
-			while(rs.next()) {
-				
+			ResultSet rs = stmt.executeQuery("select menu_id, menu_name, menu_price,menu_desc,menu_image,category_id from menu");
+			while(rs.next()) {	
 				Menu row = new Menu();
-				row.setId(rs.getInt("menu_id"));
+				row.setId(rs.getString("menu_id"));
 				row.setName(rs.getString("menu_name"));
 				row.setPrice(rs.getDouble("menu_price"));
 				row.setDesc(rs.getString("menu_desc"));
-				row.setImage(rs.getString("menu_image"));
-				
-				
+				row.setImage(rs.getBlob("menu_image"));
+				row.setCategory(rs.getString("category_id"));
 				menu.add(row);
 			}
 			con.close();
@@ -52,8 +55,6 @@ public class menuDAO {
 		}
 		
 		return menu;
-		
-		
 	}
 	
 	//getMenuById
@@ -67,10 +68,12 @@ public class menuDAO {
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				menu.setId(rs.getInt("menu_id"));
+				menu.setImage(rs.getBlob("menu_image"));
+				menu.setId(rs.getString("menu_id"));
 				menu.setName(rs.getString("menu_name"));
 				menu.setPrice(rs.getDouble("menu_price"));
-				
+				menu.setDesc(rs.getString("menu_desc"));
+				menu.setCategory(rs.getString("category_id"));
 			}
 			
 		}catch(Exception ex) {
@@ -78,6 +81,22 @@ public class menuDAO {
 		}
 		return menu;
 	}
+	
+	//delete menu by id
+	
+	public void deletemenu (String delete_menuid) {
+		try {
+			con = ConnectionManager.getConnection();
+			ps = con.prepareStatement("DELETE FROM menu WHERE menu_id = ?");
+			ps.setString(1, delete_menuid);
+			ps.execute();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	
 	
 	

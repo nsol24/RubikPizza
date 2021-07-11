@@ -37,11 +37,11 @@ response.setDateHeader ("Expires", 0);
   <div class="sidenav">
     <img src="assets/logo.png" style="width: 160px; margin: 20px 0px 0px 15px;" alt="">
     
-    <a href="#" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
-    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Menu</a>
+    <a href="AdminRedirectController?action=adminprofile" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
+    <a href="AdminRedirectController?action=adminmenu"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Menu</a>
     <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
     <a href="#"><i class="fa fa-database" aria-hidden="true"></i>Report</a>
-    <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+    <a href="LogoutAdminController"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
   </div>
   <div class="main">
     <div class="header"><h1>Welcome <c:out value="${admin.name}" /> </h1></div>
