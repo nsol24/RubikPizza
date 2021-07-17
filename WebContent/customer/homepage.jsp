@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/homepage1.css">
 <link rel="stylesheet" href="../css/homepage.css">
 <link rel="icon" href="../img/favicon.png">
 
