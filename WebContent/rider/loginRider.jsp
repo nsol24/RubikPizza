@@ -33,7 +33,7 @@
       
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="hidden" name="user_type" value="Rider"/>
-      <div class="pt-4">Don't have an account? <a href="registerRider.jsp" style="text-decoration: none;">Register</a> </div>
+     
       <input type="submit" class="fadeIn fourth" value="Login">
     </form>
 

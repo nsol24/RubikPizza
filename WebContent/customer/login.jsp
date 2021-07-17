@@ -5,65 +5,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="logincust.css">
+<link rel="stylesheet" href="../css/logincust.css">
 <link rel="icon" href="../img/favicon.png">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Login</title>
 </head>
 <body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-	<%
-			Connection con= null;
-			PreparedStatement ps = null;
-			ResultSet rs = null;
-			String driverName = "com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_76c19b622dd9a4e";
-			String user = "b9d191c32faac0";
-			String password = "f4a019ef";
-			String sql = "select cust_email from customer";
-			
-			try {
-					Class.forName(driverName);
-					con = DriverManager.getConnection(url, user, password);
-					ps = con.prepareStatement(sql);
-					rs = ps.executeQuery(); 
-		%>
-		<div class="container">
-			<div class="screen">
-				<div class="screen__content">
-					<form action="loginS.jsp" method="post" class="login">
-					
-						<div class="login__field">
-							<i class="login__icon fas fa-user"></i>
-							<input type="text" class="login__input" placeholder="Email" name="cust_email">
-						</div>
-						<div class="login__field">
-							<i class="login__icon fas fa-lock"></i>
-							<input type="password" class="login__input" placeholder="Password" name="cust_password">
-						</div>
-						<% 				
-							}
-							catch(SQLException sqe)
-				
-							{
-								out.println("home"+sqe);
-							}
-							
-						%>		
-						<input type="submit" value="Log In Now">		
-					</form>
-					<a href="register.jsp">Register Now</a>
-				</div>
-				<div class="screen__background">
-					<span class="screen__background__shape screen__background__shape4"></span>
-					<span class="screen__background__shape screen__background__shape3"></span>		
-					<span class="screen__background__shape screen__background__shape2"></span>
-					<span class="screen__background__shape screen__background__shape1"></span>
-				</div>		
-			</div>
-		</div>
-	
-	
-	
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="assets/logo2.png" style="width: 160px; margin: 20px 0px 0px 15px;" id="icon" alt="User Icon" />
+      <h1></h1>
+    </div>
+
+    <!-- Login Form -->
+    <form action="LoginCustController" method="post">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+  
+    <div id="formFooter">
+      <a class="underlineHover" href="register.jsp">Register</a>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>

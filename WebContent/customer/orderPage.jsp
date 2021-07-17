@@ -33,7 +33,7 @@
 			<li><a href="history.jsp">HISTORY</a></li>
 			<li><a href="order.jsp">ORDER</a></li>
 			<li><a href="cart.jsp">MYCART</a></li>
-			<li><a> <%=session.getAttribute("email")%></a></li>
+			<li><a> <%=session.getAttribute("session_email")%></a></li>
 		</ul>
 	</nav>
 	<div class="container">

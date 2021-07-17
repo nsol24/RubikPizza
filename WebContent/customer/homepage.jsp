@@ -21,11 +21,11 @@
 		<ul>
 		
 			<li><a href="logout.jsp">LOGOUT</a></li>
-			<li><a href="profile.jsp">MY ACCOUNT</a></li>
+			<li><a href="CustRedirectController?action=custprofile">MY ACCOUNT</a></li>
 			<li><a href="history.jsp">HISTORY</a></li>
 			<li><a href="order.jsp">ORDER</a></li>
 			<li><a href="">CART</a></li>
-			<li><a> <%=session.getAttribute("email")%></a></li>
+			<li><a> <%=session.getAttribute("session_email")%></a></li>
 			
 		</ul>
 	</nav>

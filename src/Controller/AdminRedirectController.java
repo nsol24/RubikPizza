@@ -22,11 +22,13 @@ public class AdminRedirectController extends HttpServlet {
      private  categoryDAO categorydao;
     private menuDAO menudao;
     private adminDAO admindao;
+    private riderDAO riderdao;
     public AdminRedirectController() {
         super();
         categorydao = new categoryDAO();
         menudao = new menuDAO();
         admindao = new adminDAO();
+        riderdao = new riderDAO();
     }
 
 	
@@ -61,6 +63,19 @@ public class AdminRedirectController extends HttpServlet {
 				Admin admininfo = admindao.viewadminbyid(java_session_value);
 				request.setAttribute("admin", admininfo);
 				view = request.getRequestDispatcher("adminProfile.jsp");
+				view.forward(request, response);
+				break;
+			case "updatemenu":
+				String update_menuid = request.getParameter("updateid");
+				request.setAttribute("categorylist", categorydao.viewCategorylist());
+				request.setAttribute("menuinfo", menudao.viewMenuById(update_menuid));
+				view = request.getRequestDispatcher("updateMenu.jsp");
+				view.forward(request, response);
+				break;
+			case "riderMgt":
+				request.setAttribute("process_status", "success");
+				request.setAttribute("riderlist", riderdao.getAllRider());
+				view = request.getRequestDispatcher("riderMgt.jsp");
 				view.forward(request, response);
 			}
 			

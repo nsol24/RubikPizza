@@ -86,7 +86,7 @@ public class AddMenuController extends HttpServlet {
     	   e.printStackTrace();
        }
        request.setAttribute("menulist", menudao.getAllMenu());
-        
+       request.setAttribute("categorylist", categorydao.viewCategorylist()); 
        // forwards to the message page
        RequestDispatcher view = request.getRequestDispatcher("adminMenu.jsp");
 		view.forward(request, response);

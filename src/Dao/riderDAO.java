@@ -1,9 +1,12 @@
 package Dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.security.*;
 import Connection.ConnectionManager;
 import Model.Admin;
+import Model.Menu;
 import Model.Rider;
 
 public class riderDAO {
@@ -158,5 +161,31 @@ public class riderDAO {
 			}
 			  
 		}
+		
+		//get all rider and display at page
+		public static List<Rider> getAllRider(){
+			List<Rider> rider = new ArrayList<Rider>();
+			
+			try {
+				connect = ConnectionManager.getConnection();
+				stmt = connect.createStatement();
+				ResultSet rs = stmt.executeQuery("select * from rider");
+				while(rs.next()) {	
+					Rider row = new Rider();
+					row.setId(Integer.parseInt(rs.getString("rider_id")));
+					row.setName(rs.getString("rider_name"));
+					row.setEmail(rs.getString("rider_email"));
+					row.setAddress(rs.getString("rider_address"));
+					row.setPhone(rs.getString("rider_phoneNum"));
+					rider.add(row);
+				}
+				connect.close();
+			}catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			
+			return rider;
+		}
+		
 
 }

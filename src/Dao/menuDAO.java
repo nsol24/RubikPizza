@@ -26,7 +26,7 @@ public class menuDAO {
     private ResultSet rs;
 	String id;
 	String name, desc,category;
-	Double price;
+	double price;
 	Blob image;
 	InputStream file;
 	
@@ -59,12 +59,12 @@ public class menuDAO {
 	
 	//getMenuById
 	
-	public static Menu getMenuById(int id) {
+	public static Menu viewMenuById(String view_menuid) {
 		Menu menu = new Menu();
 		try {
 			con = ConnectionManager.getConnection();
 			ps = con.prepareStatement("select * from menu where menu_id=?");
-			ps.setInt(1, id);
+			ps.setString(1, view_menuid);
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
@@ -96,7 +96,30 @@ public class menuDAO {
 		}
 	}
 	
-	
+	//update menu by id
+	public void updatemenu(Menu updatemenu) {
+		id = updatemenu.getId();
+		name = updatemenu.getName();
+		price = updatemenu.getPrice();
+		desc = updatemenu.getDesc();
+		category = updatemenu.getCategory();
+		image = updatemenu.getImage();
+		
+		try {
+			con = ConnectionManager.getConnection();
+			ps = con.prepareStatement("UPDATE menu SET menu_id= ? , menu_name= ?, menu_price= ?, menu_desc= ? WHERE menu_id = ?");
+			ps.setString(1,id);
+			ps.setString(2, name);
+			ps.setDouble(3, price);
+			ps.setString(4, desc);
+			ps.setString(5,id);
+			ps.execute();
+			System.out.println("ok dah masuk");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	

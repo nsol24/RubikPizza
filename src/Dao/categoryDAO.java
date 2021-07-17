@@ -24,7 +24,7 @@ public class categoryDAO {
 			
 			while(rs.next()) {
 				Category category_info = new Category();
-				category_info.setId(Integer.parseInt(rs.getString("category_id")));
+				category_info.setId(rs.getString("category_id"));
 				category_info.setName(rs.getString("category_name"));
 				category_info.setDesc(rs.getString("category_desc"));
 				category_info.setImage(rs.getString("category_image"));
