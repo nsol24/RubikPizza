@@ -10,47 +10,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Dao.customerDAO;
 import Dao.menuDAO;
-import Model.Customer;
+import Dao.riderDAO;
+import Model.Rider;
 
 /**
- * Servlet implementation class CustRedirectController
+ * Servlet implementation class RiderRedirectController
  */
-@WebServlet("/customer/CustRedirectController")
-public class CustRedirectController extends HttpServlet {
+@WebServlet("/rider/RiderRedirectController")
+public class RiderRedirectController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-     private customerDAO custdao;
-     HttpSession session;
-    public CustRedirectController() {
+	private menuDAO menudao;   
+	private riderDAO riderdao;
+	HttpSession session;
+    public RiderRedirectController() {
         super();
-        custdao =  new customerDAO();
+        // TODO Auto-generated constructor stub\
+        menudao = new menuDAO();
+        riderdao = new riderDAO();
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
+		
 		session = request.getSession(true);
-		String java_session_value = (String)session.getAttribute("session_email");
+		int java_session_value = (int)session.getAttribute("session_id");
+		
 		RequestDispatcher view;
 		String process_status = "";
 		
 		try {
 			switch(action) {
-				case "custprofile":
-				Customer custinfo = custdao.viewcustbyemail(java_session_value);
-				request.setAttribute("custinfo", custinfo);
-				view = request.getRequestDispatcher("profile.jsp");
+			case "riderprofile":
+				Rider riderinfo = riderdao.viewriderbyid(java_session_value);				
+				request.setAttribute("rider", riderinfo);				
+				view = request.getRequestDispatcher("riderProfile.jsp");
 				view.forward(request, response);
 				break;
-				case "homepage":
-					request.setAttribute("menu", menuDAO.getAllMenu());
-					view = request.getRequestDispatcher("homepage.jsp");
-					view.forward(request, response);
-					break;
-					
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

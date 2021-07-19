@@ -4,6 +4,7 @@ import java.util.*;
 
 import Connection.ConnectionManager;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -45,8 +46,23 @@ public class menuDAO {
 				row.setName(rs.getString("menu_name"));
 				row.setPrice(rs.getDouble("menu_price"));
 				row.setDesc(rs.getString("menu_desc"));
-				row.setImage(rs.getBlob("menu_image"));
 				row.setCategory(rs.getString("category_id"));
+				Blob blob = rs.getBlob("menu_image");
+				
+				InputStream inputStream = blob.getBinaryStream();
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+				byte[] buffer = new byte[4096];
+				int bytesRead = -1;
+				
+				while((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer,0,bytesRead);
+				}
+				byte[] imageBytes = outputStream.toByteArray();
+				String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+				
+				inputStream.close();
+				outputStream.close();
+				row.setBase64Image(base64Image);
 				menu.add(row);
 			}
 			con.close();

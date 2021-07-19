@@ -28,17 +28,17 @@ response.setDateHeader ("Expires", 0);
 </head>
 <body>
 	<div class="logo">
-		<a href="homepage.jsp"><img src="../img/logo2.png"></a>
+		<a href="CustRedirectController?action=homepage"><img src="../img/logo2.png"></a>
 	</div>
 	<nav>
 		<ul>
 			<li><a href="logout.jsp">LOGOUT</a></li>
 			<li><a>MY ACCOUNT</a></li>
-			<li><a href="homepage.jsp">HOMEPAGE</a></li>
+			<li><a href="CustRedirectController?action=homepage">HOMEPAGE</a></li>
 		</ul>
 	</nav>
 	<div class="container emp-profile">
-            <form method="post">
+            <form action="UpdateCustController" method="post">
                 <div class="row">
                     <div class="col-md-4">
                         
@@ -68,7 +68,7 @@ response.setDateHeader ("Expires", 0);
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                 <input type="text" class="form-control" id="staff_name" name="admin_name" value="<c:out value="${custinfo.name}" />" >
+                                                 <input type="text" class="form-control" id="staff_name" name="cust_name" value="<c:out value="${custinfo.name}" />" >
                                             </div>
                                         </div>
                                         <div class="row">
@@ -76,7 +76,7 @@ response.setDateHeader ("Expires", 0);
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                 <input type="text" class="form-control" id="staff_name" name="admin_name" value="<c:out value="${custinfo.email}" />" >
+                                                 <input type="text" class="form-control" id="staff_name" name="cust_email" value="<c:out value="${custinfo.email}" />" readonly >
                                             </div>
                                         </div>
                                         <div class="row">
@@ -84,7 +84,7 @@ response.setDateHeader ("Expires", 0);
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                 <input type="text" class="form-control" id="staff_name" name="admin_name" value="<c:out value="${custinfo.phone}" />" >
+                                                 <input type="text" class="form-control" id="staff_name" name="cust_phone" value="<c:out value="${custinfo.phone}" />" >
                                             </div>
                                         </div>
                                         <div class="row">
@@ -92,7 +92,7 @@ response.setDateHeader ("Expires", 0);
                                                 <label>Address</label>
                                             </div>
                                             <div class="col-md-6">
-                                                 <input type="text" class="form-control" id="staff_name" name="admin_name" value="<c:out value="${custinfo.address}" />" >
+                                                 <input type="text" class="form-control" id="staff_name" name="cust_address" value="<c:out value="${custinfo.address}" />" >
                                             </div>
                                         </div>
                             </div>

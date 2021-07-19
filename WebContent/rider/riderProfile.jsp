@@ -8,7 +8,7 @@ response.setHeader("Pragma","no-cache");
 response.setDateHeader ("Expires", 0);
 	
 	if(session.getAttribute("session_id") == null) {
-		response.sendRedirect("loginAdmin.jsp");
+		response.sendRedirect("loginRider.jsp");
 	}
 %>
     <!DOCTYPE html>
@@ -37,15 +37,15 @@ response.setDateHeader ("Expires", 0);
   <div class="sidenav">
     <img src="assets/logo.png" style="width: 160px; margin: 20px 0px 0px 15px;" alt="">
     
-    <a href="#" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
-    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Menu</a>
+    <a href="RiderRedirectController?action=riderprofile" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
+    
     <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
-    <a href="#"><i class="fa fa-database" aria-hidden="true"></i>Report</a>
-    <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+    
+    <a href="LogoutRiderController"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
   </div>
   <div class="main">
     <div class="header"><h1>Welcome Rider <c:out value="${rider.id}" /> </h1></div>
- 	<form action="UpdateStaffController" method="post" class="needs-validation" novalidate style="max-width: 800px; margin: 0 auto;">
+ 	<form action="UpdateRiderController" method="post" class="needs-validation" novalidate style="max-width: 800px; margin: 0 auto;">
       <div class="row g-3">
         <div class="col-sm-6">
           <label for="staff_id" class="form-label">ID number</label>
@@ -73,8 +73,20 @@ response.setDateHeader ("Expires", 0);
           <input type="text" class="form-control" id="staff_address" name="rider_address" value="<c:out value="${rider.address}" />" required>
           <div class="invalid-feedback"> Valid phone number is required. </div>
         </div>
-        <button class="w-100 my-5 btn btn-primary btn-lg" type="submit">Update</button>
+        <button class="w-100 my-5 btn btn-primary btn-lg" onclick="showAlertSuccessfulAdd()" type="submit">Update</button>
       </div>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                                <script>
+                                    function showAlertSuccessfulAdd() {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'success',
+                                            title: 'Update successfully',
+                                            showConfirmButton: false,
+                                            timer: 4500
+                                        });
+                                    }
+                                </script>	
     </form>
  	
   </div>

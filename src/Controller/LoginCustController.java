@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dao.customerDAO;
+import Dao.menuDAO;
 import Model.Customer;
 
 
@@ -18,10 +19,12 @@ import Model.Customer;
 public class LoginCustController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      customerDAO custdao;  
+     menuDAO menudao;
      HttpSession session;
     public LoginCustController() {
         super();
       custdao = new customerDAO();
+      menudao = new menuDAO();
     }
 
 	
@@ -43,6 +46,7 @@ public class LoginCustController extends HttpServlet {
 			
 			String java_session_value = (String)session.getAttribute("session_email");
 			System.out.print(java_session_value);
+			request.setAttribute("menu", menuDAO.getAllMenu());
 			RequestDispatcher view = request.getRequestDispatcher("homepage.jsp");
 			view.forward(request, response);
 		}else {

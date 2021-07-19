@@ -169,6 +169,31 @@ public class customerDAO {
 			return login_status;
 
 		}
+	 
+	//update cust by email
+		public void updatecust (Customer updatecust) {
+			
+			name =updatecust.getName();
+			address = updatecust.getAddress();
+			phone = updatecust.getPhone();
+			email = updatecust.getEmail();
+			
+			try {
+				currentCon = ConnectionManager.getConnection();
+				ps = currentCon.prepareStatement("UPDATE customer SET cust_name = ?, cust_phone = ?, cust_address = ? WHERE cust_email = ?");
+				ps.setString(1, name);
+				ps.setString(2, phone);
+				ps.setString(3, address);
+				ps.setString(4, email);
+				
+				
+				ps.execute();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			  
+		}
 		
 	 
 }

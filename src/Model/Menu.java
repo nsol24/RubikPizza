@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.InputStream;
 import java.sql.Blob;
 
 public class Menu {
@@ -10,6 +11,7 @@ public class Menu {
 	private Blob image;
 	private String category;
 	private Category cat;
+	InputStream menuPicture;
 	
 	public Menu() {
 		
@@ -23,6 +25,21 @@ public class Menu {
 		this.image = image;
 		this.category = category;
 	}
+	public InputStream getMenuPicture() {
+		return menuPicture;
+	}
+	public String getBase64Image() {
+		return base64Image;
+	}
+	public void setMenuPicture(InputStream menuPicture) {
+		this.menuPicture = menuPicture;
+	}
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+	String base64Image;
+	
+	
 	
 	
 	public Category getCat() {

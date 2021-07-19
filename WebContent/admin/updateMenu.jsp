@@ -81,10 +81,22 @@
 
 
         
-        <button class="w-100 my-5 btn btn-primary btn-lg" type="submit">Update Menu</button>
+        <button class="w-100 my-5 btn btn-primary btn-lg" onclick="showAlertSuccessfulAdd()" type="submit">Update Menu</button>
       </div>
+      	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                                <script>
+                                    function showAlertSuccessfulAdd() {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'success',
+                                            title: 'Update successfully',
+                                            showConfirmButton: false,
+                                            timer: 4500
+                                        });
+                                    }
+                                </script>
     </form>
- 
+ 		
   </div>
   
   

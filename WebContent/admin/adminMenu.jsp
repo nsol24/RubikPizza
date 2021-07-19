@@ -97,8 +97,20 @@
           <input type="file"  size="1000000" class="form-control" id="menu_image" name="menu_image"  required>
           <div class="invalid-feedback"> Valid image is required. </div>
         </div>
-        <button class="w-100 my-5 btn btn-primary btn-lg" type="submit">Add Product</button>
+        <button class="w-100 my-5 btn btn-primary btn-lg" onclick="showAlertSuccessfulAdd()" type="submit">Add Product</button>
       </div>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                                <script>
+                                    function showAlertSuccessfulAdd() {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'success',
+                                            title: 'Add Product successfully',
+                                            showConfirmButton: false,
+                                            timer: 4500
+                                        });
+                                    }
+                                </script>	
     </form>
  	
  	<!--table menu -->

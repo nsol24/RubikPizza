@@ -73,8 +73,20 @@ response.setDateHeader ("Expires", 0);
           <input type="text" class="form-control" id="staff_phonenum" name="admin_phonenum" value="<c:out value="${admin.phone}" />" required>
           <div class="invalid-feedback"> Valid phone number is required. </div>
         </div>
-        <button class="w-100 my-5 btn btn-primary btn-lg" type="submit">Update</button>
+        <button class="w-100 my-5 btn btn-primary btn-lg" onclick="showAlertSuccessfulAdd()" type="submit">Update</button>
       </div>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                                <script>
+                                    function showAlertSuccessfulAdd() {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'success',
+                                            title: 'Update successfully',
+                                            showConfirmButton: false,
+                                            timer: 4500
+                                        });
+                                    }
+                                </script>	
     </form>
  	
   </div>
