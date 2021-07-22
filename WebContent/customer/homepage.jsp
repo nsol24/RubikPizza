@@ -2,6 +2,16 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+	
+	if(session.getAttribute("session_email") == null) {
+		response.sendRedirect("login.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +34,7 @@
 			<li><a href="CustRedirectController?action=custprofile">MY ACCOUNT</a></li>
 			<li><a href="history.jsp">HISTORY</a></li>
 			
-			<li><a href="">CART</a></li>
+			<li><a href="cart.jsp">CART</a></li>
 			<li><a> <%=session.getAttribute("session_email")%></a></li>			
 		</ul>
 	</nav>
@@ -47,12 +57,24 @@
 								<h6 class="price">Price:<c:out value="${m.price}" /></h6>						
 								<h6 class="category">Description:<c:out value="${m.desc}" /></h6>
 								<div class="mt-3 d-flex justify-content-between">
-									<a class="btn btn-primary" href="AddOrderController?id=<c:out value="${m.id}" />">Buy now</a> 							
+									<a class="btn btn-primary" href="AddCartController?action=addToCart&id=<c:out value="${m.id}" />" onclick="showAlertSuccessfulAdd()">Add Cart</a> 							
 								</div>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
+							<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                                <script>
+                                    function showAlertSuccessfulAdd() {
+                                        Swal.fire({
+                                            position: 'top-center',
+                                            icon: 'success',
+                                            title: 'cart added successfully',
+                                            showConfirmButton: false,
+                                            timer: 4500
+                                        });
+                                    }
+                                </script>	
 				</div>
 		</div>      
     </section>

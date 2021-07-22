@@ -1,35 +1,78 @@
 package Model;
-
+import java.util.Date;
 public class Order {
 	private int id;
 	private double totalprice;
 	private String status;
-	private int cid;
+	private int orderquantity;
+	private Date orderdate;
 	private int pid;
 	private int rid;
+	private int cartid;
+	private String custEmail;
+	private String time;
 	
 	
 	public Order(){
 		
 	}
 	
-	
-	
-	
-	
-	public Order(int id, double totalprice, String status, int cid, int pid, int rid) {
+
+	public Order(int id, double totalprice, String status,  int pid, int rid) {
 		super();
 		this.id = id;
 		this.totalprice = totalprice;
 		this.status = status;
-		this.cid = cid;
+		
 		this.pid = pid;
 		this.rid = rid;
 	}
 
 
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public Date getOrderdate() {
+		return orderdate;
+	}
+
+	public void setOrderdate(Date orderdate) {
+		this.orderdate = orderdate;
+	}
 
 
+	public String getCustEmail() {
+		return custEmail;
+	}
+
+	public void setCustEmail(String custEmail) {
+		this.custEmail = custEmail;
+	}
+
+
+	public int getCartid() {
+		return cartid;
+	}
+
+
+	public void setCartid(int cartid) {
+		this.cartid = cartid;
+	}
+
+
+	public int getOrderquantity() {
+		return orderquantity;
+	}
+
+
+	public void setOrderquantity(int orderquantity) {
+		this.orderquantity = orderquantity;
+	}
 
 	public int getId() {
 		return id;
@@ -40,9 +83,7 @@ public class Order {
 	public String getStatus() {
 		return status;
 	}
-	public int getCid() {
-		return cid;
-	}
+	
 	public int getPid() {
 		return pid;
 	}
@@ -58,9 +99,7 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
+	
 	public void setPid(int pid) {
 		this.pid = pid;
 	}

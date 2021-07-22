@@ -2,6 +2,9 @@ package Model;
 
 import java.io.InputStream;
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Menu {
 	private String id;
@@ -12,11 +15,11 @@ public class Menu {
 	private String category;
 	private Category cat;
 	InputStream menuPicture;
-	
+
 	public Menu() {
 		
 	}
-	public Menu(String id, String name, Double price, String desc, Blob image, String category) {
+	public Menu(String id, int menuQty ,String name, Double price, String desc, Blob image, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -24,6 +27,7 @@ public class Menu {
 		this.desc = desc;
 		this.image = image;
 		this.category = category;
+		
 	}
 	public InputStream getMenuPicture() {
 		return menuPicture;
@@ -38,6 +42,7 @@ public class Menu {
 		this.base64Image = base64Image;
 	}
 	String base64Image;
+	
 	
 	
 	
@@ -84,11 +89,22 @@ public class Menu {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Menu [id=" + id + ", name=" + name + ", price=" + price + ", desc=" + desc + ", image=" + image
 				+ ", category=" + category + "]";
 	}
+	
+	public boolean check(ArrayList<String> cartlist, String menuid2){
+        for (String menuid : cartlist){
+            if(menuid == menuid2)
+                return true;
+        }
+        return false;
+    }
+	
 	
 	
 	

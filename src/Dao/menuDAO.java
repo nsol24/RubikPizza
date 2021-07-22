@@ -5,6 +5,7 @@ import java.util.*;
 import Connection.ConnectionManager;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -15,7 +16,7 @@ import java.sql.Statement;
 
 
 import Model.Menu;
-import Model.OrderDetails;
+
 
 public class menuDAO {
 	
@@ -135,6 +136,44 @@ public class menuDAO {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static Menu getMenu(String menuID) throws IOException
+	{
+		Menu m = new Menu();
+		try
+		{
+			con = ConnectionManager.getConnection();
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from menu where menu_id='" + menuID + "'"); 
+			if(rs.next())
+			{
+				m.setId(rs.getString("menu_id"));
+				m.setName(rs.getString("menu_name"));
+				m.setDesc(rs.getString("menu_desc"));
+				m.setPrice(rs.getDouble("menu_price"));
+				Blob blob = rs.getBlob("menu_image");
+				InputStream inputStream = blob.getBinaryStream();
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+				byte[] buffer = new byte[4096];
+				int bytesRead = -1;
+				
+				while((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer,0,bytesRead);
+				}
+				byte[] imageBytes = outputStream.toByteArray();
+				String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+				
+				inputStream.close();
+				outputStream.close();
+				m.setBase64Image(base64Image);
+			}
+		}
+		catch (SQLException e) 
+		{
+			 e.printStackTrace();
+		}
+		return m;
 	}
 	
 	
