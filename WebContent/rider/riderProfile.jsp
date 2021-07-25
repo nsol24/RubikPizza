@@ -39,7 +39,7 @@ response.setDateHeader ("Expires", 0);
     
     <a href="RiderRedirectController?action=riderprofile" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
     
-    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
+    <a href="RiderRedirectController?action=riderorder"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
     
     <a href="LogoutRiderController"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
   </div>

@@ -33,11 +33,22 @@
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
               					<script>
                                     function showAlertSuccessfulAdd() {
-                                    	Swal.fire(
-                                    			  'Login Success',
-                                    			  'Click Button to continue',
-                                    			  'success'
-                                    			)
+                                    	const Toast = Swal.mixin({
+                                    		  toast: true,
+                                    		  position: 'top-end',
+                                    		  showConfirmButton: false,
+                                    		  timer: 3000,
+                                    		  timerProgressBar: true,
+                                    		  didOpen: (toast) => {
+                                    		    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    		    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    		  }
+                                    		})
+
+                                    		Toast.fire({
+                                    		  icon: 'success',
+                                    		  title: 'Signed in successfully'
+                                    		})
                                     }
                                 </script>	
   

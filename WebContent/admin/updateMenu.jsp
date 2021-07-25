@@ -86,13 +86,13 @@
       	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                                 <script>
                                     function showAlertSuccessfulAdd() {
-                                        Swal.fire({
-                                            position: 'top-center',
-                                            icon: 'success',
-                                            title: 'Update successfully',
-                                            showConfirmButton: false,
-                                            timer: 4500
-                                        });
+                                    	Swal.fire({
+                                    		  position: 'top-end',
+                                    		  icon: 'success',
+                                    		  title: 'update succesfully',
+                                    		  showConfirmButton: false,
+                                    		  timer: 1500
+                                    		})
                                     }
                                 </script>
     </form>

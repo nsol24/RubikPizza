@@ -39,8 +39,8 @@ response.setDateHeader ("Expires", 0);
     
     <a href="AdminRedirectController?action=adminprofile" class="active"><i class="fa fa-fw fa-user"></i>Profile</a>
     <a href="AdminRedirectController?action=adminmenu"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Menu</a>
-    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
-    <a href="#"><i class="fa fa-database" aria-hidden="true"></i>Report</a>
+    <a href="AdminRedirectController?action=adminorder"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
+    <a href="AdminRedirectController?action=salesReport"><i class="fa fa-database" aria-hidden="true"></i>Report</a>
     <a href="AdminRedirectController?action=riderMgt"><i class="fa fa-motorcycle" aria-hidden="true"></i>Rider</a>
     <a href="LogoutAdminController"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
   </div>

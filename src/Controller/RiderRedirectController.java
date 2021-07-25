@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dao.menuDAO;
+import Dao.orderDAO;
 import Dao.riderDAO;
 import Model.Rider;
 
@@ -22,12 +23,14 @@ public class RiderRedirectController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private menuDAO menudao;   
 	private riderDAO riderdao;
+	private orderDAO orderdao;
 	HttpSession session;
     public RiderRedirectController() {
         super();
         // TODO Auto-generated constructor stub\
         menudao = new menuDAO();
         riderdao = new riderDAO();
+        orderdao = new orderDAO();
     }
 
 	
@@ -48,6 +51,17 @@ public class RiderRedirectController extends HttpServlet {
 				view = request.getRequestDispatcher("riderProfile.jsp");
 				view.forward(request, response);
 				break;
+			case "riderorder":
+				request.setAttribute("orderlist", orderDAO.viewOrderList());
+				view = request.getRequestDispatcher("riderOrder.jsp");
+				view.forward(request, response);
+				break;
+			case "updateorder":
+				int update_orderid =Integer.parseInt(request.getParameter("updateid")) ;
+				request.setAttribute("riderlist", riderdao.getAllRider());
+				request.setAttribute("orderinfo", orderdao.viewOrderById(update_orderid));
+				view = request.getRequestDispatcher("updateOrder.jsp");
+				view.forward(request, response);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

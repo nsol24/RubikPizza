@@ -9,10 +9,38 @@ public class OrderDetails {
 	private String menuDescription;
 	private double menuPrice;
 	private double orderTotalPrice;
+	private Menu menu;
+	private Order order;
 	
 	public OrderDetails() {
 		
 	}
+	
+	
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+
 
 	public int getOrderdetailsid() {
 		return orderdetailsid;

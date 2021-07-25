@@ -34,9 +34,29 @@
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="hidden" name="user_type" value="Rider"/>
      
-      <input type="submit" class="fadeIn fourth" value="Login">
+      <input type="submit" class="fadeIn fourth" value="Login" onclick="showAlertSuccessfulAdd()">
     </form>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+              					<script>
+                                    function showAlertSuccessfulAdd() {
+                                    	const Toast = Swal.mixin({
+                                    		  toast: true,
+                                    		  position: 'top-end',
+                                    		  showConfirmButton: false,
+                                    		  timer: 3000,
+                                    		  timerProgressBar: true,
+                                    		  didOpen: (toast) => {
+                                    		    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    		    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    		  }
+                                    		})
 
+                                    		Toast.fire({
+                                    		  icon: 'success',
+                                    		  title: 'Signed in successfully'
+                                    		})
+                                    }
+                                </script>
     
 
   </div>

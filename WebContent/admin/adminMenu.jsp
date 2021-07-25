@@ -40,7 +40,7 @@
     
     <a href="AdminRedirectController?action=adminprofile" ><i class="fa fa-fw fa-user"></i>Profile</a>
     <a href="AdminRedirectController?action=adminmenu" class="active"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Menu</a>
-    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
+    <a href="AdminRedirectController?action=adminorder"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Order</a>
     <a href="#"><i class="fa fa-database" aria-hidden="true"></i>Report</a>
     <a href="AdminRedirectController?action=riderMgt"><i class="fa fa-motorcycle" aria-hidden="true"></i>Rider</a>
     <a href="LogoutAdminController"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
@@ -138,11 +138,12 @@
           <td><c:out value="${m.desc}"/></td>
           <td><c:out value="${m.category}"/></td>
           <td>
-            <input type="button" class="w-40 btn btn-secondary" value="Update" onclick="window.location.href='AdminRedirectController?action=updatemenu&updateid=<c:out value="${m.id}"/>'">
+            <input type="button" class="w-40 btn btn-secondary"  value="Update" onclick="window.location.href='AdminRedirectController?action=updatemenu&updateid=<c:out value="${m.id}"/>'">
             <input type="button" class="w-40 btn btn-secondary" value="Delete" onclick="window.location.href='AdminRedirectController?action=deletemenu&deleteid=<c:out value="${m.id}"/>'">
           </td>
         </tr>
         </c:forEach>
+        
       </tbody>
   	</table>
   

@@ -23,12 +23,14 @@ public class AdminRedirectController extends HttpServlet {
     private menuDAO menudao;
     private adminDAO admindao;
     private riderDAO riderdao;
+    private reportDAO reportdao;
     public AdminRedirectController() {
         super();
         categorydao = new categoryDAO();
         menudao = new menuDAO();
         admindao = new adminDAO();
         riderdao = new riderDAO();
+        reportdao = new reportDAO();
     }
 
 	
@@ -77,6 +79,17 @@ public class AdminRedirectController extends HttpServlet {
 				request.setAttribute("riderlist", riderdao.getAllRider());
 				view = request.getRequestDispatcher("riderMgt.jsp");
 				view.forward(request, response);
+				break;
+			case "adminorder":
+				request.setAttribute("orderlist", orderDAO.viewOrderList());
+				view = request.getRequestDispatcher("adminOrder.jsp");
+				view.forward(request, response);
+				break;
+			case "salesReport":
+				request.setAttribute("monthlysales", reportdao.viewsalesbymonth());
+				view = request.getRequestDispatcher("salesReport.jsp");
+				view.forward(request, response);
+				break;
 			}
 			
 		}catch(Exception e) {
