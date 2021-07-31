@@ -31,7 +31,7 @@
 				</c:if>
       <input type="text" id="id" class="fadeIn second" name="id" placeholder="Rider ID">
       
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="hidden" name="user_type" value="Rider"/>
      
       <input type="submit" class="fadeIn fourth" value="Login" onclick="showAlertSuccessfulAdd()">
