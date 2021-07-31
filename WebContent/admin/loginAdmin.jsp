@@ -31,7 +31,7 @@
 				</c:if>
       <input type="text" id="id" class="fadeIn second" name="id" placeholder="Admin ID">
       
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="hidden" name="user_type" value="Manager"/>
       <div class="pt-4">Don't have an account? <a href="registerAdmin.jsp" style="text-decoration: none;">Register</a> </div>
       <input type="submit" class="fadeIn fourth" value="Login" onclick="showAlertSuccessfulAdd()">
